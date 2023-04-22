@@ -17,7 +17,6 @@ func ParseArgs() (*os.File, string, *os.File, error) {
 	var dictionary string
 	flag.StringVar(&dictionary, "dictionary", "", "dictionary (csv) to read")
 	flag.StringVar(&dictionary, "d", "", "dictionary (csv) to read (shorthand)")
-	// TODO take the target hash function if not given then check all
 
 	var hash string
 	flag.StringVar(&hash, "hash", "", "hash value to get plain text of")
@@ -28,7 +27,6 @@ func ParseArgs() (*os.File, string, *os.File, error) {
 	var generate_dict bool = len(wordlist_dir) != 0
 
 	if len(hash) == 0 && !generate_dict {
-		// TODO implement tui to get the info
 		return give_error(errors.New("You gave this program nothing to do"))
 	}
 	if generate_dict && len(wordlist_dir) == 0 {
