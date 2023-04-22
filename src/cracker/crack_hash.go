@@ -8,12 +8,12 @@ import (
 	"os"
 )
 
-func give_error(err error) (string, error) {
-	return "", err
+func give_error(err error) (string, string, error) {
+	return "", "", err
 }
 
 // dict is already open
-func SearchDict(hash string, dict *os.File) (string, error) {
+func SearchDict(hash string, dict *os.File) (string, string, error) {
 	// reset the file
 	dict.Seek(0, io.SeekStart)
 	reader := csv.NewReader(dict)
@@ -55,13 +55,13 @@ func SearchDict(hash string, dict *os.File) (string, error) {
 		sha256 := row[sha256_index]
 		switch hash {
 		case md5:
-			return plain, nil
+			return plain, "md5", nil
 		case sha1:
-			return plain, nil
+			return plain, "sha1", nil
 		case sha256:
-			return plain, nil
+			return plain, "sha256", nil
 		}
 	}
 
-	return "", errors.New("Didn't find a match")
+	return "", "", errors.New("Didn't find a match")
 }
