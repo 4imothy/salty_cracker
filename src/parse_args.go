@@ -49,6 +49,11 @@ func ParseArgs() (*os.File, string, *os.File, error) {
 		}
 	}
 	var dict *os.File
+	dictionary, err = ExpandTilde(dictionary)
+	if err != nil {
+		return give_error(err)
+	}
+
 	if len(dictionary) != 0 {
 		dict, err = os.Open(dictionary)
 		if err != nil {
