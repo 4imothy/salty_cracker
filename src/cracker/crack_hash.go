@@ -47,7 +47,9 @@ func SearchDict(hash string, dict *os.File) (string, string, error) {
 	}
 
 	for i, row := range rows {
-		fmt.Printf("Searching Row %v of dictionary\n", i+1)
+		if i%10000 == 0 {
+			fmt.Printf("Searching Row %v of dictionary\n", i)
+		}
 		i++
 		plain := row[plain_index]
 		md5 := row[md5_index]
