@@ -1,5 +1,6 @@
 # Salty Cracker
-### For CWRU Hacker Society 2023
+### A Rainbow Table to Get the Plaintext of Hashes
+#### For CWRU Hacker Society 2023
 
 Password breaker using go.
 
