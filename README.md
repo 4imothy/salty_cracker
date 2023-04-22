@@ -7,7 +7,7 @@ Password breaker using go.
 #### To Use
 **Install**
 
-[1]. Clone the code and run *go build sc.go*, or (macos) download the sc.gz in releases, then use *gunzip* to decompress and *chmod +x* to mark it executable
+[1]. Clone the code and run *go build -o=sc*, or (macos) download the sc.gz in releases, then use *gunzip* to decompress and *chmod +x* to mark it executable
 Run with *-h* to get more info about flags.
 
 **Create A Wordlist**
