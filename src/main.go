@@ -31,7 +31,7 @@ func Run() {
 		if err != nil {
 			FatalError(err.Error())
 		}
-		fmt.Printf("Plaintext found: %s\nHasd found used the %s algorithm \n", plaintext, algo)
+		fmt.Printf("Plaintext found: %s\nHash found used the %s algorithm \n", plaintext, algo)
 
 	} else {
 		result, err := dict_gen.GenerateDictionary(dir, false)
