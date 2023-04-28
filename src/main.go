@@ -10,7 +10,7 @@ import (
 func Run() {
 	dir, hash, given_dict, err := ParseArgs()
 	if err != nil {
-		FatalError(err.Error())
+		BadArgs(err.Error())
 	}
 
 	if hash != "" {

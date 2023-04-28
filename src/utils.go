@@ -1,6 +1,7 @@
 package src
 
 import (
+	"flag"
 	"fmt"
 	"os"
 	"os/user"
@@ -9,6 +10,12 @@ import (
 
 func FatalError(mes string) {
 	fmt.Println(mes)
+	os.Exit(1)
+}
+
+func BadArgs(mes string) {
+	fmt.Println(mes)
+	flag.PrintDefaults()
 	os.Exit(1)
 }
 
